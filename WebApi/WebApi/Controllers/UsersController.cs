@@ -21,5 +21,15 @@
             Users = db.Users.ToList();
             return Users;
         }
+
+        [HttpPost]
+        [Route("")]
+        public User CreateUser(User user)
+        {
+            DBContext db = new DBContext();
+            db.Users.Add(user);
+            db.SaveChanges();
+            return user;
+        }
     }
 }

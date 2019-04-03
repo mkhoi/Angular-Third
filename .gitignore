@@ -1,0 +1,7 @@
+WebApi/.vs
+WebApi/packages
+WebApi/WebApi/bin
+WebApi/WebApi/obj
+angular/node_modules/
+*.js.map
+src/*.js

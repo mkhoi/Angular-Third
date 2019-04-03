@@ -44,5 +44,16 @@
 
             db.SaveChanges();
         }
+
+        [HttpDelete]
+        [Route("{userId}")]
+        public User DeleteUser(int userId)
+        {
+            DBContext db = new DBContext();
+            User selectedUser = db.Users.FirstOrDefault(temp => temp.Id == userId);
+            db.Users.Remove(selectedUser);
+            db.SaveChanges();
+            return selectedUser;
+        }
     }
 }

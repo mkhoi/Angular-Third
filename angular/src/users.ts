@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { User } from "./user";
 import { UserService } from "./userService";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "users",
@@ -12,7 +13,7 @@ export class Users implements OnInit {
         this.getUsers();
     }
     private users: Observable<User[]>;
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private router: Router) {
         
     }
     /*constructor(){
@@ -25,6 +26,10 @@ export class Users implements OnInit {
     
     private getUsers(): void {
         this.users = this.userService.getUsers();
+    }
+
+    public onEditClicked(userId: number){
+        this.router.navigate(["editUser", userId]);
     }
 
 }

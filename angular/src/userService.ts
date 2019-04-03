@@ -30,12 +30,12 @@ export class UserService implements IUserService{
     }
 
     public updateUser(userId: number, user: User): Observable<User>{
-        let url = `http://localhost:85/api/users/${userId}`;
+        let url = `http://localhost:16749/api/users/${userId}`;
         return this.http.put(url, JSON.stringify(user), this.options).map(this.extractData).catch(this.handleError);
     }
 
     public deleteUser(userId: number): Observable<User>{
-        let url = `http://localhost:85/api/users/${userId}`;
+        let url = `http://localhost:16749/api/users/${userId}`;
         return this.http.delete(url, this.options).map(this.extractData).catch(this.handleError);
     }
 }

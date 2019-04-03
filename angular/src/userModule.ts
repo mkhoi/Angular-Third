@@ -7,6 +7,7 @@ import { Layout } from "./layout";
 import { Users } from "./users";
 import { UserService } from "./userService";
 import { CreateUser } from "./createUser";
+import { EditUser } from "./editUser";
 @NgModule({
     imports: [
         BrowserModule,
@@ -14,7 +15,7 @@ import { CreateUser } from "./createUser";
         FormsModule,
         UserRoutes
     ],
-    declarations: [CreateUser, Users, Layout],
+    declarations: [CreateUser, EditUser, Users, Layout],
     bootstrap: [Layout],
     providers: [UserService]
 })

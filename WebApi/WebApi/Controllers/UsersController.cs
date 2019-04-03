@@ -31,5 +31,18 @@
             db.SaveChanges();
             return user;
         }
+
+        [HttpPut]
+        [Route("{userId}")]
+        public void UpdateUser(int userId, User user)
+        {
+            DBContext db = new DBContext();
+            User tempUser = db.Users.FirstOrDefault(temp => temp.Id == userId);
+            tempUser.FirstName = user.FirstName;
+            tempUser.LastName = user.LastName;
+            tempUser.UserName = user.UserName;
+
+            db.SaveChanges();
+        }
     }
 }
